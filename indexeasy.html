@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+  
+
+<script type="text/javascript">
+	
+var cs = 0;
+var ys = 0;
+var ts = 0;
+
+
+for(i=0; i<6; i++)	{
+var userChoice = prompt("Do you choose rock, paper or scissors?");
+var computerChoice = Math.random();
+console.log(computerChoice);
+
+if(computerChoice <= .33){
+   computerChoice = "rock";
+} else if(computerChoice >.33 && computerChoice<.67){
+	computerChoice = "paper";
+} else{
+	computerChoice = "scissors";
+
+}
+var compare = function(choice1, choice2){
+	if(choice1 === choice2){
+		return  "The result is a tie!";
+    ts++;
+	}
+	else if(choice1 === "rock"){
+		if(choice2 ==="scissors"){
+			return "rock wins";
+            ys++;
+            console.log(ys);
+		}
+		else{
+			return "paper wins";
+            cs++;
+		}
+	}
+	else if(choice1 === "paper") {
+		if(choice2 === "rock") {
+			return "paper wins";
+            ys++;
+		}
+	
+		else{
+			return "scissors wins";
+            cs++;
+		}
+  }
+	else if(choice1 === "scissors") {
+		if(choice2 === "rock") {
+			return "rock wins";
+            cs++;
+		}
+    }
+		else{
+			return "scissors wins";
+            ys++;
+		}
+		
+	};
+
+	
+	alert(compare(userChoice,computerChoice));
+  alert(ys + " Wins " + cs + " Loses " + ts + " Ties");
+}
+
+
+
+
+</script>
+  <body>
+  	<header><h1>Rock Paper Scissors</h1></header>
+<!--
+
+ // 	<div class="score-board">
+  		<div id="user-label" class="badge">user</div>
+        <div id="computer-label" class="badge">comp</div>
+        <span id=user-score">0</span> 
+        <span id= "computer-score">0</span>
+    </div>
+
+ <div class="result">
+ 	<p>Paper covers rock. You win!</p>
+ </div>
+
+ <div class="choices">
+ 	<div class="choice" id="rock">Rock</div>
+ 	<div class="choice" id="paper">Paper</div>
+ 	<div class="choice" id="scissors">Scissors</div>
+ </div>
+
+ <div id="action-message">Make your move</div>
+ *//
+ //-->
+
+</html>
+
